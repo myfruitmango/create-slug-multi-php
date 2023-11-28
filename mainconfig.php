@@ -22,6 +22,5 @@ if ($call->connect_error) {
 
 function base_url($uri = '')
 {
-  return  '../' . $uri;
+  return  'controllers/' . $uri;
 }
-
