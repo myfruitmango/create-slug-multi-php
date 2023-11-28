@@ -1,5 +1,8 @@
 <!--  -->
-<?php $title = "4284 🥭"; ?>
+<?php
+$title = "4284 🥭";
+include "modal/add-slug.php";
+?>
 
 <section class="content-header">
   <div class="container-fluid">
@@ -21,6 +24,9 @@
         <h3 class="card-title">Data ⚠</h3>
       </div>
       <div class="card-body">
+        <a class="btn btn-app bg-success" data-toggle="modal" data-target="#modal-add">
+          <i class="fas fa-cat"></i><span style="color: #f7f7f7;">Add</span>
+        </a>
         <table id="example1" class="table table-bordered table-striped">
           <thead>
             <tr>
