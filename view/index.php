@@ -1,7 +1,7 @@
 <!--  -->
 <?php
 $title = "4284 🥭";
-include "modal/add-slug.php";
+include 'models/data.php';
 ?>
 
 <section class="content-header">
@@ -35,17 +35,24 @@ include "modal/add-slug.php";
               <th>#</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>Keple</td>
-              <td>slug</td>
-              <td>Ini Aksi</td>
-            </tr>
-          </tbody>
+          <?php
+          $say = getData();
+          foreach ($say as $data) :
+          ?>
+            <tbody>
+              <tr>
+                <td><?= $data['name'] ?></td>
+                <td><?= $data['slug'] ?></td>
+                <td>Ini Aksi</td>
+              </tr>
+            </tbody>
+          <?php
+          endforeach;
+          ?>
           <tfoot>
             <tr>
               <th>Judul</th>
-              <th>Tanggal</th>
+              <th>Slug</th>
               <th>#</th>
             </tr>
           </tfoot>
