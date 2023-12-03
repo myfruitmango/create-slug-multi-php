@@ -1,17 +1,20 @@
 <?php
 include "../mainconfig.php";
 
-$id         = $_GET['id'];
-$getData    = mysqli_query($call, "SELECT * FROM slug WHERE id='$id'");
-$data       = mysqli_fetch_assoc($getData);
-
-if ($data) {
-  $querydelete    = mysqli_query($call, "DELETE FROM slug WHERE id='$id'");
-  if ($querydelete) {
-    header('index?message=success');
+if (isset($_POST['request'])) {
+  $uuid     = $_GET['uuid'];
+  $getData  = mysqli_query($call, "SELECT * FROM slug WHERE uuid='$uuid'");
+  $data     = mysqli_fetch_assoc($getData);
+  if ($data) {
+    $delete = mysqli_query($call, "DELETE FROM slug WHERE uuid='$uuid'");
+    if ($delete) {
+      header('location:../index?response=200');
+    } else {
+      header('location:../index?response=500');
+    }
   } else {
-    header('index?message=failed');
+    header('location:../index?response=404');
   }
 } else {
-  header('index?message=404');
+  header('location:../index?response=400');
 }
