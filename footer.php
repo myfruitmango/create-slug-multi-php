@@ -16,6 +16,14 @@
 <script src="assets/plugins/inputmask/jquery.inputmask.min.js"></script>
 <script src="assets/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
 <script>
+  $(function() {
+    $("#example1").DataTable({
+      "responsive": true,
+      "lengthChange": false,
+      "autoWidth": false,
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+  })
+
   document.getElementById('addRow').addEventListener('click', function() {
     var container = document.getElementById('form-name');
     var clonedInput = container.cloneNode(true);

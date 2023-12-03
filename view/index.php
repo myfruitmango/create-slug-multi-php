@@ -33,15 +33,15 @@ include 'modal/add-slug.php'
           <thead>
             <tr>
               <th>Nama</th>
-              <th>Slug</th>
+              <th>Link</th>
               <th>#</th>
             </tr>
           </thead>
-          <?php
-          $say = getData();
-          foreach ($say as $data) :
-          ?>
-            <tbody>
+          <tbody>
+            <?php
+            $say = getData();
+            foreach ($say as $data) :
+            ?>
               <tr>
                 <td><?= $data['name'] ?></td>
                 <td><?= $data['slug'] ?></td>
@@ -60,14 +60,12 @@ include 'modal/add-slug.php'
                   ?>
                 </td>
               </tr>
-            </tbody>
-          <?php
-          endforeach;
-          ?>
+            <?php endforeach; ?>
+          </tbody>
           <tfoot>
             <tr>
               <th>Judul</th>
-              <th>Slug</th>
+              <th>Link</th>
               <th>#</th>
             </tr>
           </tfoot>

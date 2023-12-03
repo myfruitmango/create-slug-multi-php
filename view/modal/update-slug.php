@@ -14,7 +14,7 @@
             <input type="text" class="form-control" id="name" placeholder="Nama Tamu Undangan" name="name" value="<?= $data['name'] ?>" />
           </div>
           <div class="form-group">
-            <label for="nameCategory">Nama</label>
+            <label for="nameCategory">Link</label>
             <input type="text" class="form-control" style="color: #0073ef;" id="slug" placeholder="Slug" name="slug" value="www.eka-nindi.mymango.id/<?= $data['slug'] ?>" disabled />
           </div>
         </div>
