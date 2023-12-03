@@ -54,7 +54,10 @@ include 'modal/add-slug.php'
                       <i class="fas fa-trash" style="width: 14px;"></i>
                     </button>
                   </div>
-                  <?php include "modal/update-slug.php"; ?>
+                  <?php
+                  include "modal/update-slug.php";
+                  include "modal/delete-slug.php";
+                  ?>
                 </td>
               </tr>
             </tbody>
