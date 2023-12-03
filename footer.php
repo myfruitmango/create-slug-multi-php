@@ -15,6 +15,16 @@
 <script src="assets/plugins/moment/moment.min.js"></script>
 <script src="assets/plugins/inputmask/jquery.inputmask.min.js"></script>
 <script src="assets/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<script>
+  document.getElementById('addRow').addEventListener('click', function() {
+    var container = document.getElementById('form-name');
+    var clonedInput = container.cloneNode(true);
+    var input = clonedInput.querySelector('input');
+    input.value = '';
+    input.id = 'name_' + Math.random().toString(36).substring(7);
+    container.parentNode.insertBefore(clonedInput, container.nextSibling);
+  });
+</script>
 </body>
 
 </html>

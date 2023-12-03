@@ -9,14 +9,15 @@
       </div>
       <form action="<?= base_url('add-slug') ?>" method="POST">
         <div class="modal-body">
-          <div class="form-group">
+          <div class="form-group" id="form-name">
             <label for="nameCategory">Nama</label>
-            <input type="text" class="form-control" id="name" placeholder="Nama Tamu Undangan" name="name">
+            <input type="text" class="form-control" id="name" placeholder="Nama Tamu Undangan" name="name[]">
           </div>
+          <button type="button" class="btn btn-outline-secondary btn-sm mb-2" id="addRow">Tambah Lebih Banyak ++</button>
         </div>
         <div class="modal-footer justify-content-between">
-          <button type="button" class="btn btn-danger btn-block" data-dismiss="modal">Close</button>
-          <button type="submit" name="request" class="btn btn-dark btn-block">Save.. <i class="fa fa-save"></i></button>
+          <button type="button" class="btn btn-danger btn-block btn-sm" data-dismiss="modal">Close</button>
+          <button type="submit" name="request" class="btn btn-dark btn-block btn-sm">Save.. <i class="fa fa-save"></i></button>
         </div>
       </form>
     </div>
