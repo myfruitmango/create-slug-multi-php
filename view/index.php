@@ -2,6 +2,7 @@
 <?php
 $title = "4284 🥭";
 include 'models/data.php';
+include 'modal/add-slug.php'
 ?>
 
 <section class="content-header">
