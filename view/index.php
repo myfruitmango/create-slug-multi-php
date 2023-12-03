@@ -20,6 +20,7 @@ include 'modal/add-slug.php'
       <h5><i class="fas fa-radiation"></i> Attention:</h5>
       Halo, boleh minta waktunya seumur hidup ga??
     </div>
+    <?php require 'message/alert.php' ?>
     <div class="card">
       <div class="card-header bg-black color-palette">
         <h3 class="card-title">Data ⚠</h3>
@@ -46,13 +47,14 @@ include 'modal/add-slug.php'
                 <td><?= $data['slug'] ?></td>
                 <td>
                   <div class="row" style="gap: 2px">
-                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal-delete<?= $data['uuid'] ?>">
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal-update<?= $data['uuid'] ?>">
                       <i class="fa fa-cog"></i>
                     </button>
                     <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modal-delete<?= $data['uuid'] ?>">
                       <i class="fas fa-trash" style="width: 14px;"></i>
                     </button>
                   </div>
+                  <?php include "modal/update-slug.php"; ?>
                 </td>
               </tr>
             </tbody>
