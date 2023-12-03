@@ -13,6 +13,9 @@
       if ($_GET['response'] == "400") {
         echo "Tidak Ada Response 😱 ";
       }
+      if ($_GET['response'] == "406") {
+        echo "Nama Tidak Boleh Kosong 😠  ";
+      }
       if ($_GET['response'] == "404") {
         echo "Data Tidak Ditemukkan 😟 ";
       }
