@@ -1,14 +1,14 @@
 <?php
 include "../mainconfig.php";
-
 if (isset($_POST['request'])) {
-  $id   = $_GET['id'];
-  $name = htmlspecialchars($_POST['name']);
-  $getData    = mysqli_query($call, "SELECT * FROM slug WHERE id='$id'");
-  $data       = mysqli_fetch_assoc($getData);
+  $uuid   = $_GET['uuid'];
+  $name   = htmlspecialchars($_POST['name']);
   if ($name == "" || empty($name)) {
     echo "Empty";
+    header('location:../index?response=406');
   } else {
+    $getData  = mysqli_query($call, "SELECT * FROM slug WHERE uuid='$uuid'");
+    $data     = mysqli_fetch_assoc($getData);
     if ($data) {
       $convert  = trim($name);
       $convert  = preg_replace("/[^a-zA-Z0-9\-\s]+/", "", $convert);
@@ -17,17 +17,17 @@ if (isset($_POST['request'])) {
       $convert  = preg_replace('/\-{2,}/', '-', $convert);
       $slug     = $convert;
 
-      $query  = "UPDATE  slug SET name='$name', slug='$slug', updated_at='$dtme' WHERE uuid='$id'";
+      $query  = "UPDATE slug SET name='$name', slug='$slug', updated_at='$dtme' WHERE uuid='$uuid'";
       $insert = mysqli_query($call, $query);
       if ($insert) {
-        echo "Success";
+        header('location:../index?response=200');
       } else {
-        echo "Error Insert";
+        header('location:../index?response=500');
       }
     } else {
-      header('index?message=404');
+      header('location:../index?response=404');
     }
   }
 } else {
-  echo "Click Request";
+  header('location:../index?response=400');
 }
