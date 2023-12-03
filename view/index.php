@@ -1,7 +1,8 @@
 <!--  -->
 <?php
 $title = "4284 🥭";
-include "modal/add-slug.php";
+include 'models/data.php';
+include 'modal/add-slug.php'
 ?>
 
 <section class="content-header">
@@ -19,6 +20,7 @@ include "modal/add-slug.php";
       <h5><i class="fas fa-radiation"></i> Attention:</h5>
       Halo, boleh minta waktunya seumur hidup ga??
     </div>
+    <?php require 'message/alert.php' ?>
     <div class="card">
       <div class="card-header bg-black color-palette">
         <h3 class="card-title">Data ⚠</h3>
@@ -31,25 +33,74 @@ include "modal/add-slug.php";
           <thead>
             <tr>
               <th>Nama</th>
-              <th>Slug</th>
+              <th>Link</th>
               <th>#</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Keple</td>
-              <td>slug</td>
-              <td>Ini Aksi</td>
-            </tr>
+            <?php
+            $say = getData();
+            foreach ($say as $data) :
+            ?>
+              <tr>
+                <td><?= $data['name'] ?></td>
+                <td><?= $data['slug'] ?></td>
+                <td>
+                  <div class="row" style="gap: 2px">
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal-update<?= $data['uuid'] ?>">
+                      <i class="fa fa-cog"></i>
+                    </button>
+                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modal-delete<?= $data['uuid'] ?>">
+                      <i class="fas fa-trash" style="width: 14px;"></i>
+                    </button>
+                  </div>
+                  <?php
+                  include "modal/update-slug.php";
+                  include "modal/delete-slug.php";
+                  ?>
+                </td>
+              </tr>
+            <?php endforeach; ?>
           </tbody>
           <tfoot>
             <tr>
               <th>Judul</th>
-              <th>Tanggal</th>
+              <th>Link</th>
               <th>#</th>
             </tr>
           </tfoot>
         </table>
+        <div class="mt-2">
+          <div class="callout callout-info">
+            <h5><i class="fas fa-exclamation-triangle"></i> Keterangan:</h5>
+            <div class="col">
+              <div class="row">
+                <div class="col-1">
+                  <i class="fas fa-cat"></i>
+                </div>
+                <span class="col">
+                  : Menambahkan Data
+                </span>
+              </div>
+              <div class="row">
+                <div class="col-1">
+                  <i class="fas fas fa-cog"></i>
+                </div>
+                <span class="col">
+                  : Merubah Data
+                </span>
+              </div>
+              <div class="row">
+                <div class="col-1">
+                  <i class="fas fa-trash"></i>
+                </div>
+                <span class="col">
+                  : Meghapus Data
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
