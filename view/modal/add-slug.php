@@ -13,7 +13,7 @@
             <label for="nameCategory">Nama</label>
             <input type="text" class="form-control" id="name" placeholder="Nama Tamu Undangan" name="name[]">
           </div>
-          <button type="button" class="btn btn-outline-secondary btn-sm mb-2" id="addRow">Tambah Lebih Banyak ++</button>
+          <button type="button" class="btn btn-outline-secondary btn-sm mb-2" id="addRow" style="width: 100%">Tambah Lebih Banyak ++</button>
         </div>
         <div class="modal-footer justify-content-between">
           <button type="button" class="btn btn-danger btn-block btn-sm" data-dismiss="modal">Close</button>
