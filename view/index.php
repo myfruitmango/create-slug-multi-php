@@ -2,6 +2,7 @@
 <?php
 $title = "4284 🥭";
 include 'models/data.php';
+include 'modal/add-slug.php'
 ?>
 
 <section class="content-header">
@@ -43,7 +44,16 @@ include 'models/data.php';
               <tr>
                 <td><?= $data['name'] ?></td>
                 <td><?= $data['slug'] ?></td>
-                <td>Ini Aksi</td>
+                <td>
+                  <div class="row" style="gap: 2px">
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal-delete<?= $data['uuid'] ?>">
+                      <i class="fa fa-cog"></i>
+                    </button>
+                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modal-delete<?= $data['uuid'] ?>">
+                      <i class="fas fa-trash" style="width: 14px;"></i>
+                    </button>
+                  </div>
+                </td>
               </tr>
             </tbody>
           <?php
@@ -57,6 +67,37 @@ include 'models/data.php';
             </tr>
           </tfoot>
         </table>
+        <div class="mt-2">
+          <div class="callout callout-info">
+            <h5><i class="fas fa-exclamation-triangle"></i> Keterangan:</h5>
+            <div class="col">
+              <div class="row">
+                <div class="col-1">
+                  <i class="fas fa-cat"></i>
+                </div>
+                <span class="col">
+                  : Menambahkan Data
+                </span>
+              </div>
+              <div class="row">
+                <div class="col-1">
+                  <i class="fas fas fa-cog"></i>
+                </div>
+                <span class="col">
+                  : Merubah Data
+                </span>
+              </div>
+              <div class="row">
+                <div class="col-1">
+                  <i class="fas fa-trash"></i>
+                </div>
+                <span class="col">
+                  : Meghapus Data
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
